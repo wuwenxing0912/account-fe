@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import { App } from "./App";
 import { createRouter } from "vue-router";
-import routes from "./routes/index";
+import { routes } from "./routes/index";
 import { history } from "./routes/history";
 
 const router = createRouter({ history, routes });

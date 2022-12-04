@@ -1,0 +1,32 @@
+.welcome-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(to bottom, #5d33be 0%, #8f4cd7 100%);
+  > header {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .welcome-logo {
+      margin-top: 100px;
+    }
+    .logo-text {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 32px;
+      margin: 10px 0 32px 0;
+      color: #d4d4ee;
+    }
+  }
+  > main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 62px;
+  }
+  > footer {
+    flex-shrink: 0;
+  }
+}
