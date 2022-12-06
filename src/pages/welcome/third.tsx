@@ -1,6 +1,6 @@
 import { defineComponent } from "vue";
 import { RouterLink } from "vue-router";
-import pig from "../../assets/pig.svg";
+import chart from "../../assets/chart.svg";
 import style from "./style/welcome-layout.module.scss";
 import { WelcomeLayout } from "./components/welcome-layout";
 
@@ -9,15 +9,15 @@ export default defineComponent({
     return () => (
       <WelcomeLayout>
         {{
-          icon: () => <img src={pig} class={style["logo"]} />,
+          icon: () => <img src={chart} class={style["logo"]} />,
           title: () => (
             <div class={style["logo-text"]}>
-              会挣钱
+              数据可视化
               <br />
-              还要会省钱
+              数值一目了然
             </div>
           ),
-          action: () => <RouterLink to="/welcome/2">下一页</RouterLink>,
+          action: () => <RouterLink to="/welcome/4">下一页</RouterLink>,
         }}
       </WelcomeLayout>
     );

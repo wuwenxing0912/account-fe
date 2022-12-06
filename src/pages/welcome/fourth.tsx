@@ -1,6 +1,6 @@
 import { defineComponent } from "vue";
 import { RouterLink } from "vue-router";
-import pig from "../../assets/pig.svg";
+import cloud from "../../assets/cloud.svg";
 import style from "./style/welcome-layout.module.scss";
 import { WelcomeLayout } from "./components/welcome-layout";
 
@@ -9,15 +9,15 @@ export default defineComponent({
     return () => (
       <WelcomeLayout>
         {{
-          icon: () => <img src={pig} class={style["logo"]} />,
+          icon: () => <img src={cloud} class={style["logo"]} />,
           title: () => (
             <div class={style["logo-text"]}>
-              会挣钱
+              云备份
               <br />
-              还要会省钱
+              再也不怕数据丢失
             </div>
           ),
-          action: () => <RouterLink to="/welcome/2">下一页</RouterLink>,
+          action: () => <RouterLink to="/start">开启应用</RouterLink>,
         }}
       </WelcomeLayout>
     );
