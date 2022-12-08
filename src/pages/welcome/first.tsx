@@ -1,6 +1,5 @@
 import { defineComponent } from "vue";
 import { RouterLink } from "vue-router";
-import pig from "../../assets/pig.svg";
 import style from "./style/welcome-layout.module.scss";
 import { WelcomeLayout } from "./components/welcome-layout";
 
@@ -9,7 +8,11 @@ export default defineComponent({
     return () => (
       <WelcomeLayout>
         {{
-          icon: () => <img src={pig} class={style["logo"]} />,
+          icon: () => (
+            <svg>
+              <use xlinkHref="#pig"></use>
+            </svg>
+          ),
           title: () => (
             <div class={style["logo-text"]}>
               会挣钱

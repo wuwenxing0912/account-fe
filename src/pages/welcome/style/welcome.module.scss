@@ -18,8 +18,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    .welcome-logo {
+    > svg {
       margin-top: 50px;
+      width: 64px;
+      height: 69px;
     }
     .logo-text {
       font-size: 32px;
@@ -42,7 +44,7 @@
       top: 0;
       width: calc(100% - 32px);
       height: calc(100% - 62px);
-      transition: all 50s ease-out;
+      transition: all 0.5s ease-out;
     }
 
     .slide_fade_enter_from {

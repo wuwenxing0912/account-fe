@@ -1,13 +1,16 @@
 import { defineComponent } from "vue";
 import { RouterLink } from "vue-router";
-import clock from "../../assets/clock.svg";
 import style from "./style/welcome-layout.module.scss";
 import { WelcomeLayout } from "./components/welcome-layout";
 
 export default defineComponent({
   setup() {
     const slots = {
-      icon: () => <img src={clock} class={style["logo"]} />,
+      icon: () => (
+        <svg>
+          <use xlinkHref="#clock"></use>
+        </svg>
+      ),
       title: () => (
         <div class={style["logo-text"]}>
           每日提醒

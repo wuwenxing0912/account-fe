@@ -13,6 +13,10 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    > svg {
+      width: 128px;
+      height: 128px;
+    }
     > .logo-text {
       margin-top: 51px;
       color: var(--text-black-color);

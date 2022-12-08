@@ -5,7 +5,6 @@ import {
   RouterView,
 } from "vue-router";
 import style from "./style/welcome.module.scss";
-import logo from "../../assets/logo.svg";
 
 export default defineComponent({
   setup() {
@@ -15,7 +14,9 @@ export default defineComponent({
           <RouterLink to="/start">跳过</RouterLink>
         </div>
         <header>
-          <img src={logo} class={style["welcome-logo"]} />
+          <svg class={style["welcome-logo"]}>
+            <use xlinkHref="#logo"></use>
+          </svg>
           <span class={style["logo-text"]}>薪水去哪儿了</span>
         </header>
         <main>
