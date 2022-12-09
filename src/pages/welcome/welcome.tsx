@@ -1,13 +1,19 @@
-import { defineComponent, Transition, VNode } from "vue";
+import { defineComponent, ref, Transition, VNode, watchEffect } from "vue";
 import {
   RouteLocationNormalizedLoaded,
   RouterLink,
   RouterView,
 } from "vue-router";
+import { useSwipe } from "../hooks/useSwipe";
 import style from "./style/welcome.module.scss";
 
 export default defineComponent({
   setup() {
+    const main = ref<HTMLElement | null>(null);
+    const { direction, swiping } = useSwipe(main);
+    watchEffect(() => {
+      console.log(swiping.value, direction.value);
+    });
     return () => (
       <div class={style["welcome-container"]}>
         <div class={style["skip-welcome"]}>
@@ -19,7 +25,7 @@ export default defineComponent({
           </svg>
           <span class={style["logo-text"]}>薪水去哪儿了</span>
         </header>
-        <main>
+        <main ref={main}>
           <RouterView>
             {({
               Component: X,
