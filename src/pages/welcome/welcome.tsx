@@ -3,16 +3,36 @@ import {
   RouteLocationNormalizedLoaded,
   RouterLink,
   RouterView,
+  useRoute,
+  useRouter,
 } from "vue-router";
+import { throttle } from "../../utils/throttle";
 import { useSwipe } from "../hooks/useSwipe";
 import style from "./style/welcome.module.scss";
 
+const routeMap: Record<string, string> = {
+  welcome1: "/welcome/2",
+  welcome2: "/welcome/3",
+  welcome3: "/welcome/4",
+  welcome4: "/start",
+};
+
 export default defineComponent({
   setup() {
-    const main = ref<HTMLElement | null>(null);
-    const { direction, swiping } = useSwipe(main);
+    const main = ref<HTMLElement>();
+    const router = useRouter();
+    const route = useRoute();
+    const { direction, swiping } = useSwipe(main, {
+      // beforeStart: (e) => e.preventDefault(),
+    });
+    const goNext = throttle(() => {
+      const name = (route.name || "welcome1").toString();
+      router.replace(routeMap[name]);
+    }, 500);
     watchEffect(() => {
-      console.log(swiping.value, direction.value);
+      if (swiping.value && direction.value === "left") {
+        goNext();
+      }
     });
     return () => (
       <div class={style["welcome-container"]}>

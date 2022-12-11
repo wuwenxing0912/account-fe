@@ -20,7 +20,16 @@ export default defineComponent({
               还要会省钱
             </div>
           ),
-          action: () => <RouterLink to="/welcome/2">下一页</RouterLink>,
+          action: () => (
+            <div
+              onClick={() => {
+                console.log("xxx");
+                // e.stopPropagation();
+              }}
+            >
+              <RouterLink to="/welcome/2">下一页</RouterLink>
+            </div>
+          ),
         }}
       </WelcomeLayout>
     );

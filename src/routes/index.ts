@@ -8,10 +8,26 @@ export const routes = [
     component: () => import("../pages/welcome/welcome"),
     redirect: "/welcome/1",
     children: [
-      { path: "1", component: () => import("../pages/welcome/first") },
-      { path: "2", component: () => import("../pages/welcome/second") },
-      { path: "3", component: () => import("../pages/welcome/third") },
-      { path: "4", component: () => import("../pages/welcome/fourth") },
+      {
+        path: "1",
+        component: () => import("../pages/welcome/first"),
+        name: "welcome1",
+      },
+      {
+        path: "2",
+        component: () => import("../pages/welcome/second"),
+        name: "welcome2",
+      },
+      {
+        path: "3",
+        component: () => import("../pages/welcome/third"),
+        name: "welcome3",
+      },
+      {
+        path: "4",
+        component: () => import("../pages/welcome/fourth"),
+        name: "welcome4",
+      },
     ],
   },
   {
