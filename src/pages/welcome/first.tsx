@@ -21,12 +21,7 @@ export default defineComponent({
             </div>
           ),
           action: () => (
-            <div
-              onClick={() => {
-                console.log("xxx");
-                // e.stopPropagation();
-              }}
-            >
+            <div>
               <RouterLink to="/welcome/2">下一页</RouterLink>
             </div>
           ),
