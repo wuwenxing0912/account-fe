@@ -1,5 +1,6 @@
 import { defineComponent } from "vue";
 import { Button } from "../../components/button/Button";
+import { FloatButton } from "../../components/floatButton/FloatButton";
 import style from "./start.module.scss";
 
 export default defineComponent({
@@ -14,6 +15,7 @@ export default defineComponent({
             按钮
           </Button>
         </div>
+        <FloatButton></FloatButton>
       </div>
     );
   },
