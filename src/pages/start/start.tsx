@@ -15,7 +15,7 @@ export default defineComponent({
             按钮
           </Button>
         </div>
-        <FloatButton></FloatButton>
+        <FloatButton iconName="add"></FloatButton>
       </div>
     );
   },

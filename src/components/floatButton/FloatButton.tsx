@@ -3,10 +3,15 @@ import { Icon } from "../icon/Icon";
 import style from "./FloatButton.module.scss";
 
 export const FloatButton = defineComponent({
-  setup() {
+  props: {
+    iconName: {
+      type: String,
+    },
+  },
+  setup(props, context) {
     return () => (
       <div class={style.float_button}>
-        <Icon name="add" class={style.icon}></Icon>
+        <Icon name={props.iconName} class={style.icon}></Icon>
       </div>
     );
   },
